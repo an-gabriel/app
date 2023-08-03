@@ -9,7 +9,12 @@
     "lint": "eslint . --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@mdi/font": "7.0.96",
+    "@mdi/js": "^7.2.96",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/material": "^5.14.3",
     "axios": "^1.4.0",
     "core-js": "^3.29.0",
     "roboto-fontface": "*",

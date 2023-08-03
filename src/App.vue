@@ -89,6 +89,10 @@ nav a:first-of-type {
 main {
   width: 60vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   background-color: blueviolet;
 }
