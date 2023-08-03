@@ -9,6 +9,7 @@
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/add">Cadastrar</RouterLink>
         <RouterLink to="/list">Lista</RouterLink>
+        <RouterLink to="/heroes">Herois</RouterLink>
       </nav>
     </div>
   </header>
@@ -94,6 +95,6 @@ main {
   justify-content: center;
   align-items: center;
 
-  background-color: blueviolet;
+  background-color: #7400e0;
 }
 </style>
