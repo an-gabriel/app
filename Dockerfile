@@ -1,19 +1,22 @@
-# Use a image Node.js com LTS (Long Term Support)
-FROM node:lts as client-build
+FROM node:lts-alpine
 
-# Defina o diretório de trabalho para o cliente
-WORKDIR /usr/src/knights/app/
+# instala um servidor http simples para servir conteúdo estático
+RUN npm install -g http-server
 
-# Copie os arquivos de configuração e dependências do projeto
+# faz da pasta 'app' o diretório atual de trabalho
+WORKDIR /app
+
+# copia os arquivos 'package.json' e 'package-lock.json' (se disponível)
 COPY package*.json ./
+
+# instala dependências do projeto
 RUN npm install
 
-# Copie o código do cliente
+# copia arquivos e pastas para o diretório atual de trabalho (pasta 'app')
 COPY . .
 
-# Construa o aplicativo Vue.js
+# compila a aplicação de produção com minificação
 RUN npm run build
 
 EXPOSE 8080
-
-CMD ["npm", "run", "preview"]
+CMD [ "http-server", "dist" ]
